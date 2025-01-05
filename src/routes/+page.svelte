@@ -19,6 +19,18 @@
 					<tr>
 						<td>{measurement.date.toLocaleString()}</td>
 						<td>{measurement.weight}</td>
+						<td>
+							<div class="flex justify-end">
+								<button
+									class="btn btn-xs btn-error"
+									onclick={() => {
+										const confirmed = confirm('Are you sure you want to delete this measurement?');
+										if (!confirmed) return;
+										store.removeWeightMeasurement(measurement.id);
+									}}>Delete</button
+								>
+							</div>
+						</td>
 					</tr>
 				{/each}
 			</tbody>

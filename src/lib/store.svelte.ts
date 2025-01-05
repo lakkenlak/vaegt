@@ -1,5 +1,6 @@
 import { browser } from '$app/environment';
 import {
+	deleteWeightMeasurement,
 	insertWeightMeasurement,
 	listWeightMeasurements,
 	type WeightMeasurement
@@ -25,6 +26,10 @@ function store() {
 			const weightMeasurement = await insertWeightMeasurement(date, weight);
 			weightMeasurements = await listWeightMeasurements();
 			return weightMeasurement;
+		},
+		removeWeightMeasurement: async (id: IDBValidKey) => {
+			await deleteWeightMeasurement(id);
+			weightMeasurements = await listWeightMeasurements();
 		}
 	};
 }

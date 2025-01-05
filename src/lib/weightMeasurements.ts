@@ -30,3 +30,8 @@ export async function insertWeightMeasurement(
 		weight
 	};
 }
+
+export async function deleteWeightMeasurement(id: IDBValidKey) {
+	const db = await getDatabaseConnection();
+	await db.delete(WEIGHT_MEASUREMENT_STORE_NAME, id);
+}
