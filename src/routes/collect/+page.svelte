@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { getStore } from '$lib/store.svelte';
 	import type { WeightMeasurement } from '$lib/weightMeasurements';
 
@@ -37,12 +38,12 @@
 	</div>
 
 	<div class="join w-full">
-		<a href="/" class="btn btn-ghost join-item grow">Cacel</a>
+		<a href="{base}/" class="btn btn-ghost join-item grow">Cacel</a>
 		<button
 			class="btn btn-primary join-item grow"
 			onclick={() => {
 				store.addWeightMeasurement(new Date(), Math.round(weight * 10) / 10);
-				goto('/');
+				goto(base + '/');
 			}}>Confirm</button
 		>
 	</div>

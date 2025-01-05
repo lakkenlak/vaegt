@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { getStore } from '$lib/store.svelte';
 
 	const store = getStore();
@@ -24,6 +25,6 @@
 		</table>
 	</div>
 	<div>
-		<a href="/collect" class="btn btn-primary w-full">Add measurement</a>
+		<a href="{base}/collect" class="btn btn-primary w-full">Add measurement</a>
 	</div>
 </main>
