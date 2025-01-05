@@ -12,8 +12,6 @@
 		return store.weightMeasurements[0] || null;
 	});
 
-	$inspect(weight);
-
 	$effect(() => {
 		// get the last weight measurement and use it to set the initial value
 		if (lastWeightMeasurement) {
@@ -26,12 +24,12 @@
 	<div class="flex grow flex-col items-center justify-center gap-3">
 		<div class="flex flex-col gap-3">
 			<button
-				class="btn btn-lg btn-neutral"
+				class="btn btn-neutral btn-lg"
 				onclick={() => (weight = Math.round((weight + 0.1) * 10) / 10)}>Up</button
 			>
 			<span class={'text-center text-5xl'}>{weight}</span>
 			<button
-				class="btn btn-lg btn-neutral"
+				class="btn btn-neutral btn-lg"
 				onclick={() => (weight = Math.round((weight - 0.1) * 10) / 10)}>Down</button
 			>
 		</div>
