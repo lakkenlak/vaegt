@@ -8,6 +8,7 @@
 
 <svelte:head>
 	<title>Vaegt</title>
+	<link rel="manifest" href="/manifest.json" />
 </svelte:head>
 
 {@render children()}
