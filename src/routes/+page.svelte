@@ -1,2 +1,29 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+	import { getStore } from '$lib/store.svelte';
+
+	const store = getStore();
+</script>
+
+<main class="flex h-full flex-col gap-2 overflow-auto p-2">
+	<div class="grow overflow-auto">
+		<table class="table-zebra table">
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Weight</th>
+				</tr>
+			</thead>
+			<tbody>
+				{#each store.weightMeasurements as measurement}
+					<tr>
+						<td>{measurement.date.toLocaleString()}</td>
+						<td>{measurement.weight}</td>
+					</tr>
+				{/each}
+			</tbody>
+		</table>
+	</div>
+	<div>
+		<a href="/collect" class="btn btn-primary w-full">Add measurement</a>
+	</div>
+</main>

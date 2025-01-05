@@ -11,7 +11,8 @@ export default {
 
 	plugins: [daisyui, typography],
 	daisyui: {
-		themes: ['light', 'dark'],
-		logs: false
+		themes: ['corporate', 'business'],
+		logs: false,
+		darkTheme: 'business'
 	}
 } satisfies Config;
