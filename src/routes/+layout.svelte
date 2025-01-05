@@ -6,4 +6,8 @@
 	setStore();
 </script>
 
+<svelte:head>
+	<title>Vaegt</title>
+</svelte:head>
+
 {@render children()}
